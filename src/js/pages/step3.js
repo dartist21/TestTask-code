@@ -35,37 +35,37 @@ function step3() {
     if (el.target.checked) {
       switch (el.target.name) {
         case 'check_fb':
-          inputFb.classList.remove('display-none');
+          inputFb.classList.remove('form__input--hidden');
           break;
         case 'check_vk':
-          inputVk.classList.remove('display-none');
+          inputVk.classList.remove('form__input--hidden');
           break;
         case 'check_tw':
-          inputTw.classList.remove('display-none');
+          inputTw.classList.remove('form__input--hidden');
           break;
         case 'check_ok':
-          inputOk.classList.remove('display-none');
+          inputOk.classList.remove('form__input--hidden');
           break;
         default:
-          console.log('errror in switch');
+          console.log('error in switch');
           break;
       }
     } else {
       switch (el.target.name) {
         case 'check_fb':
-          inputFb.classList.add('display-none');
+          inputFb.classList.add('form__input--hidden');
           break;
         case 'check_vk':
-          inputVk.classList.add('display-none');
+          inputVk.classList.add('form__input--hidden');
           break;
         case 'check_tw':
-          inputTw.classList.add('display-none');
+          inputTw.classList.add('form__input--hidden');
           break;
         case 'check_ok':
-          inputOk.classList.add('display-none');
+          inputOk.classList.add('form__input--hidden');
           break;
         default:
-          console.log('errror in switch');
+          console.log('error in switch');
           break;
       }
     }
@@ -96,16 +96,16 @@ function step3() {
           console.log('errror in switch');
           break;
       }
-    } else if (!el.target.parentNode.classList.contains('display-none')) {
-      el.target.parentNode.classList.add('not-valid-input');
-      urlError.classList.remove('display-none');
+    } else if (!el.target.classList.contains('form__error--hidden')) {
+      el.target.classList.add('form__input--not-valid');
+      urlError.classList.remove('form__error--hidden');
     }
   }
 
   function resetState(el) {
-    if (el.target.parentNode.classList.contains('not-valid-input')) {
-      urlError.classList.add('display-none');
-      el.target.parentNode.classList.remove('not-valid-input');
+    if (el.target.classList.contains('form__input--not-valid')) {
+      urlError.classList.add('form__error--hidden');
+      el.target.classList.remove('form__input--not-valid');
     }
   }
 }

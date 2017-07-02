@@ -13,20 +13,13 @@
   font-size: 15px;
 }
 
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 700px;
-}
-
-.form__pag-num {
+/* Пагинация по номера страниц */
+.pagination-pg {
   display: flex;
   flex-direction: row;
-  margin-bottom: 16px;
 }
 
-.pag-num__page {
+.pagination-pg__item {
   padding: 10px 16px;
   background: #ffffff;
   margin-right: 8px;
@@ -35,47 +28,111 @@
   cursor: pointer;
 }
 
-.form__description {
+.pagination-pg__item:last-of-type {
+  margin-right: 0px;
+}
+/**/
+
+
+/* Пагинация кнопками */
+.pagination-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.pagination-btn__item {
+  color: #ff9800;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px 32px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pagination-btn__item:first-of-type {
+  margin-left: 0px;
+}
+
+.pagination-btn__finish  {
+  color: #ffffff;
+  background: #ff9800;
+}
+/**/
+
+
+/* Кнопки */
+.button--display-none {
+  display: none;
+}
+
+.button--not-active {
+  pointer-events: none;
+  cursor: default;
+  color: #bbbbbb;
+}
+
+.button--is-active {
+  color: #ff9800;
+}
+/**/
+
+
+/* Анкета */
+.questionnaire {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.questionnaire__description {
+  margin-top: 16px;
   margin-bottom: 40px;
 }
 
-.form__user-interaction {
+.questionnaire__data-input {
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
 }
-/*потерететь*/
-.form__user-interaction > input, select {
-  width: 300px;
-  height: 40px;
-  padding-left: 10px;
-  font-family: inherit;
-  font-size: 15px;
-  color: #bbbbbb;
-  border: 0px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-  background-color: #ffffff;
-}
+/**/
 
-.user-interaction__item {
+
+/* Форма */
+.form {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-
+  flex-direction: column;
 }
 
-input[type="text"], input[type="email"], {
-  width: 300px;
+.form__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.form__item--space-between {
+  justify-content: space-between;
+}
+
+.form__item:last-of-type {
+  margin-bottom: 0px;
+}
+
+.form__social-network {
+  margin-right: 16px;
+}
+
+.form__input {
+  min-width: 300px;
   height: 40px;
   padding-left: 10px;
-  font-family: inherit;
   font-size: 15px;
-  color: #bbbbbb;
   border: 0px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -84,38 +141,46 @@ input[type="text"], input[type="email"], {
   outline:none;
 }
 
-
-.user-interaction__item > input :last-child {
-    margin-bottom: 0px;
+.form__input--not-valid {
+  outline: 2px solid red;
 }
 
-.social-networks {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
+.form__input--hidden {
+  visibility: hidden;
 }
 
-.social-networks__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  height: 40px;
-
+.form__error {
+  color: red;
+  margin-left: 16px;
 }
 
-.social-networks__item :last-child {
-  margin-bottom: 0px;
+.form__error--hidden {
+  visibility: hidden;
 }
+/**/
 
-.user-interaction__images {
+
+/* Плейсхолдеры для инпутов */
+::-webkit-input-placeholder {color:#bbbbbb;}
+::-moz-placeholder          {color:#bbbbbb;}
+:-moz-placeholder           {color:#bbbbbb;}
+:-ms-input-placeholder      {color:#bbbbbb;}
+
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+/**/
+
+
+/* Блок картинки с животными*/
+.animal-img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.user-interaction__images  > img {
+.animal-img__item  {
   height: 150px;
   width: 150px;
   margin-right: 16px;
@@ -125,59 +190,12 @@ input[type="text"], input[type="email"], {
   cursor: pointer;
 }
 
-.choosed-image {
-  border: 3px solid #ff9800
+.animal-img__item--is-choosed {
+  outline: 3px solid #ff9800
 }
+/**/
 
-.form__pag-nav {
-  display: flex;
-  flex-direction: row;
-}
-
-.pag-nav {
-  color: #ff9800;
-  background: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-  padding: 10px 32px;
-  margin-right: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.pag-nav--end {
-  color: #ffffff;
-  background: #ff9800;
-}
-
-.not-active {
-  pointer-events: none;
-  cursor: default;
-  color: #bbbbbb;
-}
-
-.is-active {
-  color: #ff9800;
-}
-
-.cur-page {
-  color: #ff9800;
-}
-
-.not-valid-msg {
-  color: red;
-  margin-left: 20px;
-}
-
-.display-none {
-  display: none;
-}
-
-.not-valid-input {
-  border: 2px solid red;
-}
+/*TODO*/
 
 .final-card {
   padding: 24px;

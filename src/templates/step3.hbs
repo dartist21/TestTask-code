@@ -1,56 +1,40 @@
-<div class="form">
-  <div class="form__pag-num">
-    <a class="pag-num__page" data-value="1">1</a>
-    <a class="pag-num__page" data-value="2">2</a>
-    <a class="pag-num__page" data-value="3">3</a>
-    <a class="pag-num__page" data-value="4">4</a>
-  </div>
-  <div class="form__description">
+<div class="questionnaire">
+{{>pagination-pg}}
+  <div class="questionnaire__description">
     <span>3. Отметьте социальные сети</span>
   </div>
-  <div class="form__user-interaction">
-    <div class="social-networks">
-      <div class="social-networks__item">
-        <div>
+  <div class="questionnaire__data-input">
+    <div class="form">
+      <div class="form__item form__item--space-between">
+        <div class="form__social-network">
           <input type="checkbox" name="check_fb">
           <span>Facebook</span>
         </div>
-        <div>
-        <input class="display-none" type="text" name="input_fb" placeholder="Ваша страница в Facebook">
-        </div>
+        <input class="form__input form__input--hidden" type="text" name="input_fb" placeholder="Ваша страница в Facebook">
       </div>
-      <div class="social-networks__item">
-        <div>
+      <div class="form__item form__item--space-between">
+        <div  class="form__social-network">
           <input type="checkbox" name="check_vk">
           <span>Вконтакте</span>
         </div>
-        <div>
-        <input class="display-none" type="text" name="input_vk" placeholder="Ваша страница в Vkontakte">
+        <input class="form__input form__input--hidden" type="text" name="input_vk" placeholder="Ваша страница в Vkontakte">
       </div>
-      </div>
-      <div class="social-networks__item">
-        <div>
+      <div class="form__item form__item--space-between">
+        <div  class="form__social-network">
           <input type="checkbox" name="check_tw">
           <span>Twitter</span>
         </div>
-        <div>
-        <input  class="display-none" type="text" name="input_tw" placeholder="Ваша страница в Twitter">
-        </div>
+        <input class="form__input form__input--hidden" type="text" name="input_tw" placeholder="Ваша страница в Twitter">
       </div>
-      <div class="social-networks__item">
-        <div>
+      <div class="form__item form__item--space-between">
+        <div class="form__social-network">
           <input type="checkbox" name="check_ok">
           <span>Одноклассники</span>
         </div>
-        <div>
-        <input  class="display-none" type="text" name="input_ok" placeholder="Ваша страница в Odnoklasniki">
-        </div>
+        <input class="form__input form__input--hidden" type="text" name="input_ok" placeholder="Ваша страница в Odnoklasniki">
       </div>
-      <span id="url-error" class="not-valid-msg display-none">&#8212; cсылка должна быть вида social.network/yourID</span>
+      <span id="url-error" class="form__error form__error--hidden">&#8212; cсылка должна быть вида social.network/yourID</span>
     </div>
   </div>
-  <div class="form__pag-nav">
-    <a id="prev" class="pag-nav"><i class="material-icons">keyboard_arrow_left</i> Предыдущий</a>
-    <a id="next" class="pag-nav">Следующий <i class="material-icons">keyboard_arrow_right</i></a>
-  </div>
+  {{>pagination-btn}}
 </div>

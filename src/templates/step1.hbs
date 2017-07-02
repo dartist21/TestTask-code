@@ -1,29 +1,20 @@
-<div class="form">
-  <div class="form__pag-num">
-    <a class="pag-num__page" data-value="1">1</a>
-    <a class="pag-num__page" data-value="2">2</a>
-    <a class="pag-num__page" data-value="3">3</a>
-    <a class="pag-num__page" data-value="4">4</a>
-  </div>
-  <div class="form__description">
+<div class="questionnaire">
+{{>pagination-pg}}
+  <div class="questionnaire__description">
     <span>1. Введите имя и e-mail</span>
   </div>
-  <div class="form__user-interaction">
-    <div class="user-interaction__item">
-      <div class="input">
-        <input type="text" name="name" placeholder="Имя">
+  <div class="questionnaire__data-input">
+    <form class="form" action="index.html" method="post">
+      <div class="form__item">
+        <input class="form__input form__name" type="text" name="name" value="" placeholder="Имя">
+        <span id="name-error" class="form__error form__error--hidden">&#8212; некорректное имя</span>
       </div>
-      <span id="name-error" class="not-valid-msg display-none">&#8212; некорректное имя</span>
-    </div>
-    <div class="user-interaction__item">
-      <div class="input">
-        <input type="email" name="email" placeholder="E-mail">
+      <div class="form__item">
+        <input class="form__input form__email" type="text" name="email" value=""
+        placeholder="E-mail">
+        <span id="email-error" class="form__error form__error--hidden">&#8212; некорректный e-mail</span>
       </div>
-      <span id="email-error" class="not-valid-msg display-none">&#8212; некорректный адрес эл. почты</span>
-    </div>
+    </form>
   </div>
-  <div class="form__pag-nav">
-    <a id="prev" class="pag-nav"><i class="material-icons">keyboard_arrow_left</i> Предыдущий</a>
-    <a id="next" class="pag-nav">Следующий <i class="material-icons">keyboard_arrow_right</i></a>
-  </div>
+  {{>pagination-btn}}
 </div>

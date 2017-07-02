@@ -1,8 +1,8 @@
-function pagination(curStep) {
-  let pagItems = document.querySelectorAll('.pag-num__page');
-  let prev = document.querySelector('#prev');
-  let next = document.querySelector('#next');
-  let final = document.querySelector('#final');
+  function pagination(curStep) {
+  let pagItems = document.querySelectorAll('.pagination-pg__item');
+  let prev = document.querySelector('.pagination-btn__prev');
+  let next = document.querySelector('.pagination-btn__next');
+  let finish = document.querySelector('.pagination-btn__finish');
 
   for (let i = 0; i < pagItems.length; i++) {
     pagItems[i].addEventListener('click', changePage);
@@ -14,43 +14,45 @@ function pagination(curStep) {
   if (next) {
     next.addEventListener('click', goNext);
   }
-  if (final) {
-    final.addEventListener('click', goFinal);
+  if (finish) {
+    finish.addEventListener('click', goFinish);
   }
 
 
   switch (curStep) {
     case 1:
-      prev.classList.add('not-active');
+      prev.classList.add('button--not-active');
       for (let i = curStep; i < pagItems.length; i++) {
-        pagItems[i].classList.add('not-active');
+        pagItems[i].classList.add('button--not-active');
       }
       break;
     case 2:
       for (let i = curStep - 2; i >= 0; --i) {
-        pagItems[i].classList.add('is-active');
+        pagItems[i].classList.add('button--is-active');
       }
       for (let i = curStep; i < pagItems.length; i++) {
-        pagItems[i].classList.add('not-active');
+        pagItems[i].classList.add('button--not-active');
       }
       break;
     case 3:
       for (let i = curStep - 2; i >= 0; --i) {
-        pagItems[i].classList.add('is-active');
+        pagItems[i].classList.add('button--is-active');
       }
       for (let i = curStep; i < pagItems.length; i++) {
-        pagItems[i].classList.add('not-active');
+        pagItems[i].classList.add('button--not-active');
       }
       break;
     case 4:
       for (let i = curStep - 2; i >= 0; --i) {
-        pagItems[i].classList.add('is-active');
+        pagItems[i].classList.add('button--is-active');
       }
       for (let i = curStep; i < pagItems.length; i++) {
-        pagItems[i].classList.add('not-active');
+        pagItems[i].classList.add('button--not-active');
       }
+      next.classList.add('button--display-none');
+      finish.classList.remove('button--display-none');
       break;
-    case final:
+    case finish:
 
         break;
     default:
@@ -74,7 +76,7 @@ function pagination(curStep) {
     page.redirect('/step' + nextStep);
   }
 
-  function goFinal() {
+  function goFinish() {
     page.redirect('/final');
   }
 

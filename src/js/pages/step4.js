@@ -4,7 +4,7 @@ function step4() {
   let curStep = 4;
   pagination(curStep);
 
-  let animalImages = rootElement.querySelectorAll('.animal');
+  let animalImages = rootElement.querySelectorAll('.animal-img__item');
   let animalError = rootElement.querySelector('#animal-error');
 
   for (let i = 0; i < animalImages.length; i++) {
@@ -12,16 +12,16 @@ function step4() {
   }
 
   function checkAnimal(el) {
-    animalError.classList.add('display-none');
+    animalError.classList.add('form__error--hidden');
 
     for (let i = 0; i < animalImages.length; i++) {
-      animalImages[i].style.outline = '';
+      animalImages[i].classList.remove('animal-img__item--is-choosed');
     }
 
-    el.target.style.outline = '3px solid #ff9800';
+    el.target.classList.add('animal-img__item--is-choosed');
 
     if (el.target.dataset.animal === 'dog') {
-      animalError.classList.remove('display-none');
+      animalError.classList.remove('form__error--hidden');
     } else {
       questionnaire.setInformation('catUrl', el.target.currentSrc);
     }

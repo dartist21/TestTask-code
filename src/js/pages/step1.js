@@ -4,8 +4,11 @@ function step1() {
   let curStep = 1;
   pagination(curStep);
 
-  let nameInput = rootElement.querySelector('input[name="name"]');
-  let emailInput = rootElement.querySelector('input[name="email"]');
+  let nameInput = rootElement.querySelector('.form__name');
+  let emailInput = rootElement.querySelector('.form__email');
+
+  console.log(nameInput.value);
+
 
   let nameError = rootElement.querySelector('#name-error')
   let emailError = rootElement.querySelector('#email-error')
@@ -23,8 +26,8 @@ function step1() {
       resetStateName(el);
       questionnaire.setInformation('username', nameInputValue);
     } else {
-      el.target.parentNode.classList.add('not-valid-input');
-      nameError.classList.remove('display-none');
+      el.target.classList.add('form__input--not-valid');
+      nameError.classList.remove('form__error--hidden');
     }
   }
 
@@ -36,19 +39,19 @@ function step1() {
       resetStateEmail(el);
       questionnaire.setInformation('email', emailInputValue);
 
-    } else if (emailError.classList.contains('display-none')) {
-      el.target.parentNode.classList.add('not-valid-input');
-      emailError.classList.remove('display-none');
+    } else if (emailError.classList.contains('form__error--hidden')) {
+      el.target.classList.add('form__input--not-valid');
+      emailError.classList.remove('form__error--hidden');
     }
   }
 
   function resetStateEmail(el) {
-    emailError.classList.add('display-none');
-    el.target.parentNode.classList.remove('not-valid-input');
+    emailError.classList.add('form__error--hidden');
+    el.target.classList.remove('form__input--not-valid');
   }
 
   function resetStateName(el) {
-    nameError.classList.add('display-none');
-    el.target.parentNode.classList.remove('not-valid-input');
+    nameError.classList.add('form__error--hidden');
+    el.target.classList.remove('form__input--not-valid');
   }
 }
