@@ -16,6 +16,8 @@ function step3() {
 
   let urlError = rootElement.querySelector('#url-error');
 
+  fillSavedSocialNetworks();
+
   checkFb.addEventListener('click', showInput);
   checkVk.addEventListener('click', showInput);
   checkTw.addEventListener('click', showInput);
@@ -106,6 +108,29 @@ function step3() {
     if (el.target.classList.contains('form__input--not-valid')) {
       urlError.classList.add('form__error--hidden');
       el.target.classList.remove('form__input--not-valid');
+    }
+  }
+
+  function fillSavedSocialNetworks() {
+    if (questionnaire.fb) {
+      checkFb.checked = true;
+      inputFb.value = questionnaire.fb;
+      inputFb.classList.remove('form__input--hidden');
+    }
+    if (questionnaire.vk) {
+      checkVk.checked = true;
+      inputVk.value = questionnaire.vk;
+      inputVk.classList.remove('form__input--hidden');
+    }
+    if (questionnaire.tw) {
+      checkTw.checked = true;
+      inputTw.value = questionnaire.tw;
+      inputTw.classList.remove('form__input--hidden');
+    }
+    if (questionnaire.ok) {
+      checkOk.checked = true;
+      inputOk.value = questionnaire.ok;
+      inputOk.classList.remove('form__input--hidden');
     }
   }
 }

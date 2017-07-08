@@ -1,15 +1,17 @@
 function final() {
   rootElement.innerHTML = templates['final']();
 
-  nameEl =      rootElement.querySelector('.card-name');
-  emailEl =     rootElement.querySelector('.card-email');
-  locationEl =  rootElement.querySelector('.card-location');
-  fbEl =        rootElement.querySelector('.card-fb');
-  vkEl =        rootElement.querySelector('.card-vk');
-  twEl =        rootElement.querySelector('.card-tw');
-  okEl =        rootElement.querySelector('.card-ok');
-  catEl =       rootElement.querySelector('.card-img');
+  let resetBtn = rootElement.querySelector('.pagination-btn__reset');
+  resetBtn.addEventListener('click', resetForm);
 
+  nameEl =      rootElement.querySelector('.profile-card__name');
+  emailEl =     rootElement.querySelector('.profile-card__email');
+  locationEl =  rootElement.querySelector('.profile-card__location');
+  fbEl =        rootElement.querySelector('.profile-card__fb');
+  vkEl =        rootElement.querySelector('.profile-card__vk');
+  twEl =        rootElement.querySelector('.profile-card__tw');
+  okEl =        rootElement.querySelector('.profile-card__ok');
+  catEl =       rootElement.querySelector('.profile-card__image');
 
   nameEl.innerHTML = questionnaire.username;
   emailEl.innerHTML = questionnaire.email;
@@ -29,4 +31,10 @@ function final() {
   }
 
   catEl.src = questionnaire.catUrl;
+
+  function resetForm() {
+    questionnaire.resetAll();
+    page.redirect('/step1');
+  }
+
 }

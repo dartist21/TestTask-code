@@ -6,13 +6,18 @@
   <div class="questionnaire__data-input">
     <form class="form" action="index.html" method="post">
       <div class="form__item">
-        <select name=""></select>
+        <select class="form__input form__country" name="">
+          <option value="" disabled selected>Страна</option>
+        </select>
         <span id="name-error" class="form__error form__error--hidden">&#8212; </span>
       </div>
       <div class="form__item">
-        <select name=""></select>
+        <select class="form__input form__city form__input--not-active" name="">
+          <option value="" disabled selected>Город</option>
+        </select>
         <span id="email-error" class="form__error form__error--hidden">&#8212; </span>
       </div>
+      <span id="validation-error" class="form__error form__error--margin-top-20 form__error--display-none">Все поля обязательны к заполнению!</span>
     </form>
   </div>
   {{>pagination-btn}}

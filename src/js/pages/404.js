@@ -1,4 +1,4 @@
 function notfound() {
   console.log('notfound');
-    rootElement.innerHTML = templates['404']();
+  rootElement.innerHTML = templates['404']();
 }

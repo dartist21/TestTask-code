@@ -1,10 +1,9 @@
-(function () {
+(function() {
 
   //=require 'lib/*'
   //=require 'pages/*'
 
   const rootElement = document.querySelector('#root');
-
 
   rootElement.innerHTML = templates['step1']();
 

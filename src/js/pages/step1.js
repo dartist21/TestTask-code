@@ -7,11 +7,16 @@ function step1() {
   let nameInput = rootElement.querySelector('.form__name');
   let emailInput = rootElement.querySelector('.form__email');
 
-  console.log(nameInput.value);
+  let nameError = rootElement.querySelector('#name-error');
+  let emailError = rootElement.querySelector('#email-error');
 
+  if (questionnaire.username) {
+    nameInput.value = questionnaire.username;
+  }
 
-  let nameError = rootElement.querySelector('#name-error')
-  let emailError = rootElement.querySelector('#email-error')
+  if (questionnaire.email) {
+    emailInput.value = questionnaire.email;
+  }
 
   nameInput.addEventListener('focusin', resetStateName);
   emailInput.addEventListener('focusin', resetStateEmail);
@@ -54,4 +59,5 @@ function step1() {
     nameError.classList.add('form__error--hidden');
     el.target.classList.remove('form__input--not-valid');
   }
+
 }
