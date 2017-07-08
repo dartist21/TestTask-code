@@ -4,14 +4,14 @@
   position: fixed;
   top: 0;
   left: 0;
+  background-color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
   flex-direction: column;
-  background-color: #f5f5f5;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
 }
 
 /* Пагинация по номера страниц */
@@ -92,9 +92,19 @@
 .questionnaire {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 10px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 767px) {
+    .questionnaire {
+        width: 100%;
+    }
+    .pagination-btn__text {
+      display: none;
+    }
 }
 
 .questionnaire__description {
@@ -136,7 +146,7 @@
 }
 
 .form__input {
-  min-width: 300px;
+  min-width: 280px;
   height: 40px;
   padding-left: 10px;
   font-size: 15px;

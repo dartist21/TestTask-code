@@ -26,5 +26,6 @@ nbproject
 .idea
 
 # Folders to ignore
+public
 node_modules
 bower_components
